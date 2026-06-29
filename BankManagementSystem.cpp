@@ -907,7 +907,7 @@ void print_login_header()
 
 short read_main_menue_option()
 {
-    cout << "Choose what do you want to do? [1 to 8]? ";
+    cout << "Select an option [1 - 8]: ";
     short Choice = 0;
     cin >> Choice;
     return Choice;
@@ -915,7 +915,7 @@ short read_main_menue_option()
 
 short read_user_mange_menue_option()
 {
-    cout << "Choose what do you want to do? [1 to 6]? ";
+    cout << "Select an option [1 - 6]: ";
     short Choice = 0;
     cin >> Choice;
     return Choice;
@@ -1090,7 +1090,7 @@ void trans_menue_option(en_trans_choices trans_menu)
 
 short read_trans_menu_option()
 {
-    cout << "Choose what do you want to do? [1 to 4]? ";
+    cout << "Select an option [1 - 4]: ";
     short Choice = 0;
     cin >> Choice;
     return Choice;
@@ -1098,17 +1098,23 @@ short read_trans_menu_option()
 
 void print_transaction_menue()
 {
-    cout << "------------------------------------------------------\n";
-    cout << "               transactions menu                      \n";
-    cout << "------------------------------------------------------\n";
-    cout << "      [1] diposit                                     \n";
-    cout << "      [2] withdraw                                    \n";
-    cout << "      [3] total balance                               \n";
-    cout << "      [4] back to main menu                           \n";
-    cout << "------------------------------------------------------\n";
-    trans_menue_option(en_trans_choices(read_trans_menu_option()));
-}
+    system("cls");
 
+    cout << "======================================================\n";
+    cout << "                  TRANSACTIONS                        \n";
+    cout << "======================================================\n";
+    cout << "                     Main Menu                        \n";
+    cout << "------------------------------------------------------\n";
+    cout << "  [1] Deposit                                        \n";
+    cout << "  [2] Withdraw                                       \n";
+    cout << "  [3] Total Balances                                 \n";
+    cout << "  [4] Back to Main Menu                              \n";
+    cout << "======================================================\n";
+
+    trans_menue_option(
+        en_trans_choices(read_trans_menu_option())
+    );
+}
 void show_access_denied_message()
 {
     cout << "\n------------------------------------\n";
@@ -1313,37 +1319,45 @@ void users_mange_menue_option(en_mange_users_choices mange_users_menu)
 void print_main_screen()
 {
     system("cls");
+
+    cout << "======================================================\n";
+    cout << "               BANK MANAGEMENT SYSTEM                 \n";
+    cout << "======================================================\n";
+    cout << "                      Main Menu                       \n";
     cout << "------------------------------------------------------\n";
-    cout << "                  MAIN SCREEN                         \n";
-    cout << "------------------------------------------------------\n";
-    cout << "      [1] show client list                            \n";
-    cout << "      [2] add new client                              \n";
-    cout << "      [3] delet client                                \n";
-    cout << "      [4] upddate client info                         \n";
-    cout << "      [5] find client info                            \n";
-    cout << "      [6] transaction                                 \n";
-    cout << "      [7] mange users                                 \n";
-    cout << "      [8] logout                                      \n";
-    cout << "------------------------------------------------------\n";
+    cout << "  [1] Show Client List                               \n";
+    cout << "  [2] Add New Client                                 \n";
+    cout << "  [3] Delete Client                                  \n";
+    cout << "  [4] Update Client Information                      \n";
+    cout << "  [5] Find Client                                    \n";
+    cout << "  [6] Transactions                                   \n";
+    cout << "  [7] Manage Users                                   \n";
+    cout << "  [8] Logout                                         \n";
+    cout << "======================================================\n";
+
     mein_menue_option(en_main_choices(read_main_menue_option()), get_user_by_username(current_user));
 }
-
 void print_user_mange_screen()
 {
+    system("cls");
 
+    cout << "======================================================\n";
+    cout << "                 USER MANAGEMENT                      \n";
+    cout << "======================================================\n";
+    cout << "                     Main Menu                        \n";
     cout << "------------------------------------------------------\n";
-    cout << "               USERS MANGE SCREEN                     \n";
-    cout << "------------------------------------------------------\n";
-    cout << "      [1] show users list                             \n";
-    cout << "      [2] add new  user                               \n";
-    cout << "      [3] delet user                                  \n";
-    cout << "      [4] upddate user info                           \n";
-    cout << "      [5] find user info                              \n";
-    cout << "      [6] go back to main menue                        \n";
-    cout << "------------------------------------------------------\n";
-    users_mange_menue_option(en_mange_users_choices(read_user_mange_menue_option()));
+    cout << "  [1] Show User List                                 \n";
+    cout << "  [2] Add New User                                   \n";
+    cout << "  [3] Delete User                                    \n";
+    cout << "  [4] Update User Information                        \n";
+    cout << "  [5] Find User                                      \n";
+    cout << "  [6] Back to Main Menu                              \n";
+    cout << "======================================================\n";
+
+    users_mange_menue_option(
+        en_mange_users_choices(read_user_mange_menue_option())
+    );
 }
-
 void login_screen()
 {
     string user_name;
@@ -1378,6 +1392,7 @@ void login_screen()
 
 int main()
 {
+    system("title Bank Management System");
     login_screen();
 
     system("pause>0");
