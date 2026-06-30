@@ -22,7 +22,7 @@ enum en_permissions
     p_manage_users = 64
 };
 enum en_mange_users_choices { list_users = 1, add_new_user = 2, delete_user = 3, update_user = 4, find_user = 5, main_menue = 6 };
-const string clients_file = "problem_47.txt";
+const string clients_file = "clients.txt";
 const string users_file = "users.txt";
 struct st_client_info
 {

@@ -98,6 +98,9 @@ This project represents the procedural implementation of the Bank Management Sys
 A future version will rebuild the entire application using **Object-Oriented Programming (OOP)** principles.
 
 ---
+## Related Project
+
+- [ATM System](https://github.com/mmoho92-cloud/ATM-System.git)
 
 ## 👨‍💻 Author
 
